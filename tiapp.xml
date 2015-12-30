@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <deployment-targets>
+        <target device="windows">false</target>
+        <target device="mobileweb">true</target>
+        <target device="iphone">true</target>
+        <target device="ipad">true</target>
+        <target device="android">true</target>
+    </deployment-targets>
+    <guid>4d51c991-0f90-42f5-9eee-0a4beb79e43f</guid>
+    <property name="ti.android.useLegacyWindow" type="bool">true</property>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <sdk-version>5.0.0.GA</sdk-version>
+    <id>com.appcelerator.kitchensink</id>
+    <name>KitchenSink</name>
+    <version>4.0.0</version>
+    <publisher>appcelerator</publisher>
+    <url>http://appcelerator.com</url>
+    <description>not specified</description>
+    <copyright>2014 by appcelerator</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <ios>
+        <plist>
+            <dict>
+                <key>NSLocationWhenInUseUsageDescription</key>
+                <string>
+                Specify the reason for accessing the user’s location information.
+                This appears in the alert dialog when asking the user for permission to
+                access their location.
+                </string>
+                <key>NSLocationUsageDescription</key>
+                <string>AR Demo</string>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+                <key>FacebookAppID</key>
+                <string>495338853813822</string>
+                <key>FacebookDisplayName</key>
+                <string>KitchenSink</string>
+                <key>CFBundleURLTypes</key>
+                <array>
+                    <dict>
+                        <key>CFBundleURLName</key>
+                        <string>com.appcelerator.kitchensink</string>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                            <string>fb495338853813822</string>
+                        </array>
+                    </dict>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+    </iphone>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <application>
+                <activity android:alwaysRetainTaskState="true"
+                    android:configChanges="keyboardHidden|orientation"
+                    android:label="KitchenSink"
+                    android:name=".KitchensinkActivity" android:theme="@style/Theme.Titanium">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                </activity>
+                <activity android:label="KitchenSinkFacebook"
+                    android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+                <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+            </application>
+            <uses-sdk android:targetSdkVersion="21"/>
+        </manifest>
+        <activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
+        <services>
+            <service type="interval" url="testservice.js"/>
+        </services>
+    </android>
+    <modules>
+        <module platform="android">facebook</module>
+        <module platform="iphone">facebook</module>
+        <module platform="commonjs">ti.cloud</module>
+    </modules>
+    <property name="appc-app-id" type="string">56833e709de661f526100e86</property>
+    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-development" type="string">y6X5riw2mRW9aj4yG7AmIxe6EGIpRcIv</property>
+    <property name="acs-oauth-key-development" type="string">sew3s1aogIC4ZPdJxDmaeEV7JLUaKy9X</property>
+    <property name="acs-api-key-development" type="string">9JgVWmygx1Kw8vOnMIUE6HTGxauLTSSy</property>
+    <property name="acs-username-development" type="string">appc_app_user_dev</property>
+    <property name="acs-password-development" type="string">Fe6q8WRIkOjXDkdJYc</property>
+    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-production" type="string">bqT81iGUPg3LZzJfR41BvpHExY445akI</property>
+    <property name="acs-oauth-key-production" type="string">mbHpAZJAskM1aBrA2ST5SKRu6ldPSetF</property>
+    <property name="acs-api-key-production" type="string">Q2FoOOi0nlz5n33TtaHgtwVQsjS4c8IU</property>
+    <property name="acs-username-production" type="string">appc_app_user</property>
+    <property name="acs-password-production" type="string">wFjB2YL30ydRqHgPgL</property>
+    <property name="appc-org-id" type="string">100089838</property>
+    <property name="appc-creator-user-id" type="string">5d9d83b5-a083-48e9-8d76-ab897da0b811</property>
+</ti:app>
